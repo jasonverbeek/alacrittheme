@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cat ~/.config/alacritty/theme.yml ~/.config/alacritty/font.yml ~/.config/alacritty/customize.yml >| ~/.config/alacritty/alacritty.yml
+cat ~/.config/alacritty/theme.yml ~/.config/alacritty/font.yml ~/.config/alacritty/customize.yml >| ~/.config/alacritty/alacritty.yml 2> /dev/null
 
