@@ -1,0 +1,16 @@
+#!/bin/bash
+
+MODE="${1:-theme}"
+
+if [ -z "$2" ]; then
+    ls /usr/share/alacrittheme/${MODE}s/ | sed "s/\.yml//g"
+else
+    if [ -f /usr/share/alacrittheme/${MODE}s/${2}.yml ]; then
+        echo "Installing ${MODE} ${2}.yml"
+        rm ~/.config/alacritty/${MODE}.yml &> /dev/null
+        ln -s /usr/share/alacrittheme/${MODE}s/${2}.yml ~/.config/alacritty/${MODE}.yml
+        alacritty-regenerate
+    else
+        echo "${2}.yml doesn't exist"
+    fi
+fi
