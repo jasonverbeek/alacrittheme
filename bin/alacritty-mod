@@ -2,8 +2,23 @@
 
 MODE="${1:-theme}"
 
+function get-items {
+    current_item=$(readlink -f ~/.config/alacritty/${MODE}.yml | xargs basename | sed "s,\.yml,,g")
+    for e in $(ls /usr/share/alacrittheme/${MODE}s/ | sed "s/\.yml//g"); do
+        if [ "${current_item}" = "${e}" ]; then
+            tput setaf 2
+            echo "${e}"
+            tput sgr0
+        else
+            tput setaf 2
+            tput sgr0
+            echo "${e}"
+        fi
+    done
+}
+
 if [ -z "$2" ]; then
-    ls /usr/share/alacrittheme/${MODE}s/ | sed "s/\.yml//g" | column
+    get-items | column -x
 else
     if [ -f /usr/share/alacrittheme/${MODE}s/${2}.yml ]; then
         echo "Installing ${MODE} ${2}.yml"
