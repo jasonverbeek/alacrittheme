@@ -2,11 +2,15 @@
 theming tool writen in bash to easily swap between themes and fonts
 
 ## Installation
-- Arch Linux
+### Arch Linux
 
- Alacrittheme is available on the [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)  using your prefered [AUR Helper](https://wiki.archlinux.org/index.php/AUR_helpers).
+Alacrittheme is available on the [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)  using your prefered [AUR Helper](https://wiki.archlinux.org/index.php/AUR_helpers).
 
- `~ > paru -S alacrittheme` ([PARU](https://github.com/morganamilo/paru))
+`~ > paru -S alacrittheme` ([PARU](https://github.com/morganamilo/paru))
+
+### Other distros
+
+Soon(tm)
 
 ## Examples
 Getting a list of available themes or fonts:
