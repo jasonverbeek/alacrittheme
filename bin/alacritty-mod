@@ -3,7 +3,7 @@
 MODE="${1:-theme}"
 
 if [ -z "$2" ]; then
-    ls /usr/share/alacrittheme/${MODE}s/ | sed "s/\.yml//g"
+    ls /usr/share/alacrittheme/${MODE}s/ | sed "s/\.yml//g" | column
 else
     if [ -f /usr/share/alacrittheme/${MODE}s/${2}.yml ]; then
         echo "Installing ${MODE} ${2}.yml"
