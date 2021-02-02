@@ -1,0 +1,8 @@
+_alacritty_theme() {
+    compadd $(ls /usr/share/alacrittheme/themes | sed "s,\.yml,,g")
+}
+_alacritty_font() {
+    compadd $(ls /usr/share/alacrittheme/fonts | sed "s,\.yml,,g")
+}
+compdef _alacritty_theme alacritty-theme
+compdef _alacritty_font alacritty-font

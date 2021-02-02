@@ -1,0 +1,10 @@
+_alacritty_theme_completions() {
+    THEMES=$(ls /usr/share/alacrittheme/themes | sed "s,\.yml,,g")
+    COMPREPLY=($(compgen -W "${THEMES}" "${COMP_WORDS[1]}"))
+}
+_alacritty_font_completions() {
+    FONTS=$(ls /usr/share/alacrittheme/fonts | sed "s,\.yml,,g")
+    COMPREPLY=($(compgen -W "${FONTS}" "${COMP_WORDS[1]}"))
+}
+complete -F _alacritty_theme_completions alacritty-theme
+complete -F _alacritty_font_completions alacritty-font
