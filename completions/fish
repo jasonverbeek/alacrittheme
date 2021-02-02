@@ -1,0 +1,4 @@
+function __alacritty_theme_complete
+    ls /usr/share/alacrittheme/themes/ | sed "s/\.yml//g"
+end
+complete -c alacritty-theme -f -a "(__alacritty_theme_complete)"
